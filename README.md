@@ -20,11 +20,11 @@ This article assumes that you are familiar with:
 - ASP .NET MVC / WebAPI
 
 ##Introduction
-BeanCache is build using [Service Fabric](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-overview/), which is a distributed systems platform used to build scalable, reliable, and easily-managed applications for the cloud.
+BeanCache is built using [Service Fabric](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-overview/), which is a distributed systems platform used to build scalable, reliable, and easily-managed applications for the cloud.
 
-BeanCache is a distributed cache which is composed of two [microservices](https://msdn.microsoft.com/en-us/magazine/mt595752.aspx). In a microservices, an application logical units are segregated into small autonomous services, which can scale out independently across VMs/containers, whereas, in a more traditional application, most of application functional units reside in same process address space and/or do not scale independently.
+BeanCache is a distributed cache which is composed of two [microservices](https://msdn.microsoft.com/en-us/magazine/mt595752.aspx). In microservices, an application logical units are segregated into small autonomous services, which can scale out independently across VMs/containers, whereas, in a more traditional application, most of the application functional units reside in the same process address space and/or do not scale independently.
 
-BeanCache is made up of two microservices build using Service Fabric:
+BeanCache is made up of two microservices built using Service Fabric:
 
 - BeanCache Web
 - BeanCache Service
@@ -34,7 +34,7 @@ BeanCache is made up of two microservices build using Service Fabric:
 ![BeanCache Architecture](https://raw.githubusercontent.com/alibaloch/BeanCache/master/images/Architecture.png)
 
 ###BeanCache Web
-BeanCache Web is self-hosted [Stateless Reliable Services built using OWIN](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-reliable-services-communication-webapi/). It exposes following interface using WebAPI to get/set/remove values from cache. GetHitsCount give information about how many cached items are in each [service fabric partition](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-concepts-partitioning/).
+BeanCache Web is self-hosted [Stateless Reliable Services built using OWIN](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-reliable-services-communication-webapi/). It exposes following interface using WebAPI to get/set/remove values from the cache. GetHitsCount give information about how many cached items are in each [service fabric partition](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-concepts-partitioning/).
 
 
 	public interface IBeanCache : IService
@@ -106,10 +106,10 @@ BeanCache Service is a Stateful service which stores <key, value=""> pairs in [R
 
 
 ### Dashboard
-Dashboard is set of static HTML and Javascript files build using AngularJS and exposed via BeanCache Web.
+Dashboard is a set of static HTML and Javascript files built using AngularJS and exposed via BeanCache Web.
 
 ## Screenshots
 ![BeanCache Architecture](https://raw.githubusercontent.com/alibaloch/BeanCache/master/images/Dashboard2.png)
 ![BeanCache Architecture](https://raw.githubusercontent.com/alibaloch/BeanCache/master/images/Dashboard1.png)
 ## Disclaimer
-The purpose of this sample program using Service Fabric is to understand the underpinning of Service Fabric and to build an end to end application. The goal is not to compete/replace existing caching services. 
+The purpose of this sample program using Service Fabric is to understand the underpinnings of Service Fabric and to build an end to end application. The goal is not to compete/replace existing caching services. 
